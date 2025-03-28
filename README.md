@@ -2,21 +2,23 @@
 
 ## Table of contents
 
--   [Story](#story)
--   [Technologies Implemented](#technologies-implemented)
-    -   [Step 1](#step-1)
-    -   [Step 2](#step-2)
-    -   [Step 3](#step-3)
-    -   [Step 4](#step-4)
-    -   [Step 5](#step-5)
-    -   [Step 6](#step-6)
-    -   [Last step](#last-step)
+- [SMALL OFFICE / HOME OFFICE (SOHO) IMPLEMENTATION](#small-office--home-office-soho-implementation)
+  - [Table of contents](#table-of-contents)
+- [Story](#story)
+- [Technologies Implemented](#technologies-implemented)
+  - [Step 1](#step-1)
+  - [Step 2](#step-2)
+  - [Step 3](#step-3)
+  - [Step 4](#step-4)
+  - [Step 5](#step-5)
+  - [Step 6](#step-6)
+- [Last step](#last-step)
 
 ---
 
 # Story
 
-XYZ company is a fast-growing company in Eastern Australia with more than 2 million customers globally. The company deals with selling and buying of food items, which are basically operated from the headquarters. The company is intending to open a branch near the local town. Thus, the company requires young IT graduates to design the network for the branch. The network is intended to operate separately from the HQ network. Being a small network, the company has the following requirements during implementation. Meaning that the Branch Network will be in a different autonomous system(AS) from the HQ network
+XYZ company is a fast-growing company in XXX-Region with more than 2 million customers globally. The company deals with selling and buying of food items, which are basically operated from the headquarters. The company is intending to open a branch near the local town. The network is intended to operate separately from the HQ network. Being a small network, the company has the following requirements during implementation. Meaning that the Branch Network will be in a different autonomous system(AS) from the HQ network
 
 -   One router and one switch to be used (all CISCO products).
 -   3 departments (Admin/IT, Finance/HR and Customer service/Reception).
@@ -48,14 +50,16 @@ Assume the ISP gave out a base network of 192.168.1.0, you as the young network 
 
 ## Step 2
 
-Given the base class C network 192.168.1.0 -> 3 Department -> 3 subnet
+"Assume the ISP gave out a base network of 192.168.1.0, you as the young network engineer who has been hired, design and implement a network considering the above requirements."
+
+Given the base class C network 192.168.1.0 => 3 Department => 3 subnet
 
 2^2 = 4 > 3
 
-2 bit borrowed -> 255.255.255.192 = 11111111. 11111111. 11111111.11000000
+2 bit borrowed from the network portion => 255.255.255.192 = 11111111. 11111111. 11111111.11000000
 
 | 1st subnet: /26                       | 2nd subnet: /26                         | 3rd subnet: /26                          |
-| ------------------------------------- | :-------------------------------------- | :--------------------------------------- |
+| :------------------------------------- | :-------------------------------------- | :--------------------------------------- |
 | Network IP: 192.168.1.0               | Network IP: 192.168.1.64                | Network IP: 192.168.1.128                |
 | Usable IP: 192.168.1.1 - 192.168.1.62 | Usable IP: 192.168.1.65 - 192.168.1.126 | Usable IP: 192.168.1.129 - 192.168.1.190 |
 | Broadcast IP: 192.168.1.63            | Broadcast IP: 192.168.1.127             | Broadcast IP: 192.168.1.191              |
@@ -143,7 +147,7 @@ Configuring Wireless network device
 
 # Last step
 
-After this we will test the connectivity between each department
+We will test the connectivity between each department
 
 ![last step](assets/final.png)
 **The first packet always timed out because of the ARP protocol -> Every ping now is successfully works**
